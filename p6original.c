@@ -7,29 +7,13 @@ void input_string(char a[20])
 int str_reverse(char a[20])
 {
   int count=0;
-  for(int i=0;i<20;i++)
-  {
-    if(a[i]=='\0')
-      break;
+  while(a[count]!='\0')
     count++;
-  }
-  int countr=0;
-  for(int i=count-1;i<=0;i--)
-  {
-    reversea[i]=a[countr];
-    countr++;
-  }
   return count;
 }
 void output(char a[20],char reversea[20])
 {
-  int countr=0;
-  for(int i=count-1;i<=0;i--)
-  {
-    reversea[i]=a[countr];
-    countr++;
-  }
-  printf("%s",reversea);
+  printf("the reverse of %s is %s",a,reversea);
 }
 int main()
 {
@@ -37,6 +21,12 @@ int main()
   input_string(a);
   int size=str_reverse(a);
   char reversea[size];
+  int j=size-1;
+  for(int i=0;i<size;i++)
+  {
+    reversea[i]=a[j];
+    j--;
+  }
   output(a,reversea);
   return 0;
 }
